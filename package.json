@@ -1,0 +1,145 @@
+{
+  "name": "nestgenerator",
+  "displayName": "NestGenerator",
+  "publisher": "PMartn",
+  "description": "NestGenerator",
+  "version": "0.0.1",
+  "engines": {
+    "vscode": "^1.94.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "activationEvents": [
+    "onCommand:extension.createFile",
+    "onView:fileExplorer"
+  ],
+  "main": "./out/extension.js",
+  "contributes": {
+    "commands": [
+      {
+        "command": "extension.createUseCase",
+        "title": "Use Case"
+      },
+      {
+        "command": "extension.createTypeOrmModel",
+        "title": "TypeORM Model"
+      },
+      {
+        "command": "extension.createTypeOrmRepositoryImpl",
+        "title": "TypeORM Repository Impl."
+      },
+      {
+        "command": "extension.createDto",
+        "title": "DTO"
+      },
+      {
+        "command": "extension.createEntity",
+        "title": "Entity"
+      },
+      {
+        "command": "extension.createRepository",
+        "title": "Repository"
+      },
+      {
+        "command": "extension.createService",
+        "title": "Service"
+      },
+      {
+        "command": "extension.createServiceImpl",
+        "title": "Service Impl."
+      },
+      {
+        "command": "extension.createModule",
+        "title": "Module"
+      },
+      {
+        "command": "extension.createCompleteModule",
+        "title": "Complete Module"
+      },
+      {
+        "command": "extension.createController",
+        "title": "Controller"
+      }
+    ],
+    "menus": {
+      "explorer/context": [
+        {
+          "submenu": "extension.create",
+          "group": "2"
+        }
+      ],
+      "extension.create": [
+        {
+          "command": "extension.createUseCase",
+          "group": "application"
+        },
+        {
+          "command": "extension.createController",
+          "group": "infrastructure"
+        },
+        {
+          "command": "extension.createTypeOrmRepositoryImpl",
+          "group": "infrastructure"
+        },
+        {
+          "command": "extension.createDto",
+          "group": "domain"
+        },
+        {
+          "command": "extension.createEntity",
+          "group": "domain"
+        },
+        {
+          "command": "extension.createRepository",
+          "group": "domain"
+        },
+        {
+          "command": "extension.createService",
+          "group": "domain"
+        },
+        {
+          "command": "extension.createServiceImpl",
+          "group": "infrastructure"
+        },
+        {
+          "command": "extension.createModule",
+          "group": "module"
+        },
+        {
+          "command": "extension.createCompleteModule",
+          "group": "module"
+        },
+        {
+          "command": "extension.createTypeOrmModel",
+          "group": "infrastructure"
+        }
+      ]
+    },
+    "submenus": [
+      {
+        "id": "extension.create",
+        "label": "Nest Generator"
+      }
+    ]
+  },
+  "scripts": {
+    "vscode:prepublish": "npm run compile",
+    "compile": "tsc -p ./",
+    "watch": "tsc -watch -p ./",
+    "pretest": "npm run compile && npm run lint",
+    "lint": "eslint src",
+    "test": "vscode-test"
+  },
+  "devDependencies": {
+    "@types/vscode": "^1.94.0",
+    "@types/mocha": "^10.0.8",
+    "@types/node": "20.x",
+    "@typescript-eslint/eslint-plugin": "^8.7.0",
+    "@typescript-eslint/parser": "^8.7.0",
+    "eslint": "^9.11.1",
+    "typescript": "^5.6.2",
+    "@vscode/test-cli": "^0.0.10",
+    "@vscode/test-electron": "^2.4.1"
+  }
+}
