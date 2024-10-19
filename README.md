@@ -2,7 +2,7 @@
 
 NestJS file generator Visual Studio Code extension following hexagonal architecture
 
-## Instalation
+## Installation
 
 1. Download the latest release
 
